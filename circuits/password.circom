@@ -1,6 +1,20 @@
 pragma circom 2.0.0;
 
-include "../node_modules/keccak256-circom/circuits/keccak.circom";
+include "../node_modules/circomlib/circuits/poseidon.circom";
 
-// for a input & output of 32 bytes:
-component main = Keccak(32*8, 32*8);
+template PasswordCheck() {
+    signal input password;
+    signal input passwordHash;
+    signal input proverAddress;
+    signal input senderAddress;
+
+    component p = Poseidon(1);
+
+    p.inputs[0] <== password;
+    
+    passwordHash === p.out;
+
+    proverAddress === senderAddress;
+}
+
+component main {public [passwordHash, senderAddress]} = PasswordCheck();
