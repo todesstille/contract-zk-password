@@ -13,7 +13,9 @@
     "@nomiclabs/hardhat-waffle": "^2.0.6",
     "@openzeppelin/contracts": "=4.9.3",
     "@openzeppelin/contracts-upgradeable": "=4.9.3",
-    "hardhat": "2.20.0"
+    "hardhat": "2.20.0",
+    "hardhat-circom": "^3.3.2",
+    "keccak256-circom": "git+https://github.com/vocdoni/keccak256-circom"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "=2.0.2",
